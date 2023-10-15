@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FetchAPI</title>
 </head>
+
 <body>
     <h1>Hello</h1>
     <form action="/details" method="post">
         <input type="text" name="holdername" id="hn">
         <button type="submit">Check Deposit</button>
     </form>
-    <p></p>
+    <p class="dep"></p>
     <script>
-
+        fetch('/api/details').then((response) => {
+            return response.json()
+        }).then((deposit) => {
+            // console.log(deposit)
+            document.getElementsByClassName("dep")[0].innerHTML = deposit.deposit
+        })
     </script>
 </body>
+
 </html>
