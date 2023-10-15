@@ -19,7 +19,7 @@
             return response.json()
         }).then((deposit) => {
             // console.log(deposit)
-            document.getElementsByClassName("dep")[0].innerHTML = deposit.deposit
+            document.getElementsByClassName("dep")[0].innerText = deposit.deposit
         })
     </script>
 </body>
